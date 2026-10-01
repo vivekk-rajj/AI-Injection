@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Injection Sprint 16</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">AI Injection</div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#ai">AI Summary</a>
+        <a href="#tasks">Tasks</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="ai" class="card">
+        <h1>Summarize Notes with OpenAI</h1>
+        <p class="hint">Paste text below and generate a concise professional summary.</p>
+
+        <label for="api-key">OpenAI API Key</label>
+        <input id="api-key" type="password" placeholder="sk-..." autocomplete="off" />
+
+        <label for="note-input">Input text</label>
+        <textarea id="note-input" rows="7" placeholder="Paste notes here"></textarea>
+
+        <div class="actions">
+          <button id="summarize-btn">Generate Summary</button>
+          <div id="ai-loader" class="loader hidden" aria-live="polite">Generating…</div>
+        </div>
+
+        <label for="summary-output">Summary</label>
+        <textarea id="summary-output" rows="6" readonly placeholder="AI output appears here"></textarea>
+      </section>
+
+      <section id="tasks" class="card">
+        <h2>Task List</h2>
+        <p class="hint">Demonstrates responsive table container, empty state, and toast feedback.</p>
+        <button id="add-task-btn">Add Demo Task</button>
+        <div id="empty-state" class="empty-state">No tasks yet. Add your first task to get started.</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="task-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
