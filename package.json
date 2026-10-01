@@ -1,0 +1,30 @@
+{
+  "name": "ai-injection",
+  "version": "1.0.0",
+  "description": "Sprint 16 AI Injection & Polish implementation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "node --check server.js src/app.js src/routes/ai.js src/lib/errors.js src/lib/sanitize.js src/services/openaiClient.js public/app.js",
+    "test": "jest --runInBand",
+    "build": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "openai": "^4.68.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.5.2",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "public/app.js"
+    ]
+  }
+}

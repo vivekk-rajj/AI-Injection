@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Injection Sprint 16</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-container">
+        <a class="brand" href="#">AI Injection</a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+          <a href="#rewrite-card">Rewrite</a>
+          <a href="#history-card">History</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <section id="rewrite-card" class="card">
+        <h1>Professional Rewrite Assistant</h1>
+        <p>Paste a rough message and get a clean professional rewrite.</p>
+        <label for="input-text">Text to rewrite</label>
+        <textarea id="input-text" rows="6" maxlength="1000"></textarea>
+        <div class="action-row">
+          <button id="rewrite-btn" type="button">Rewrite with AI</button>
+          <span id="loading-state" class="loading" aria-live="polite" hidden>Generating...</span>
+        </div>
+      </section>
+
+      <section id="history-card" class="card">
+        <h2>Recent Results</h2>
+        <div id="empty-state" class="empty-state" role="status">No rewrites yet. Submit text to see your first result.</div>
+        <div class="table-wrapper" id="history-wrapper" hidden>
+          <table>
+            <thead>
+              <tr>
+                <th>Original</th>
+                <th>AI Rewrite</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
